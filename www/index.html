@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        var nomes = []
+        var nomeinserido
+
+        function pushvetor() {
+
+            nomeinserido = document.getElementById('insertnome').value
+
+            nomes.push(nomeinserido)
+
+            alert(nomes)
+
+        }
+        function unshiftvetor() {
+
+            nomeinserido = document.getElementById('insertnome').value
+
+            nomes.unshiftvetor(nomeinserido)
+
+            alert(nomes)
+
+        }
+        function popvetor() {
+
+            nomeinserido = document.getElementById('insertnome').value
+
+            nomes.pop(nomeinserido)
+
+            alert(nomes)
+
+        }
+        function shiftvetor() {
+
+            nomeinserido = document.getElementById('insertnome').value
+
+            nomes.shift(nomeinserido)
+
+            alert(nomes)
+
+        }
+
+        function listar() {
+            document.getElementById('lista').innerHTML = nomes;
+        }
+
+        function procurar() {
+            var search = document.getElementById("search").value;
+
+            var listarnm = nomes[search]
+
+            document.getElementById('listarprocurar').innerHTML = listarnm
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>VETORES</h1>
+        <div class="vetor">
+            <input type="text" placeholder="Insira o nome aqui" id="insertnome">
+            <div class="buttons">
+                <input type="button" value="CADASTRAR PUSH" onclick="pushvetor()">
+                <input type="button" value="CADASTRAR UNSHIFT" onclick="unshiftvetor()">
+                <br>
+                <input type="button" value="CADASTRAR POP" onclick="popvetor()">
+                <input type="button" value="CADASTRAR SHIFT" onclick="shiftvetor()">
+            </div>
+        </div>
+
+        <div class="lista">
+            <button onclick="listar()">LISTAR OS ITENS</button>
+            <span id="lista"> ITENS </span>
+        </div>
+
+        <div class="search">
+            <label>Selecione a lista</label>
+            <select id="search">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <button onclick="procurar()">Procurar</button>
+            <span id="listarprocurar"></span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
